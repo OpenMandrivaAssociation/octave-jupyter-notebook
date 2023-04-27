@@ -1,26 +1,26 @@
 %global octpkg jupyter-notebook
 
 Summary:	Run and fill Jupyter Notebooks within GNU Octave
-Name:		octave-%{octpkg}
+Name:		octave-jupyter-notebook
 Version:	1.2.0
-Release:	1
-Source0:	%{url}/archive/v%{version}/%{octpkg}-%{version}.tar.gz
+Release:	2
 License:	GPLv3+
 Group:		Sciences/Mathematics
-Url:		https://github.com/gnu-octave/pkg-%{octpkg}/
-BuildArch:	noarch
-
-BuildRequires:	octave-devel >= 5.1.0
-BuildRequires:	octave-json >= 1.5.0
+#Url:		https://packages.octave.org/jupyter-notebook/
+Url:		https://github.com/gnu-octave/pkg-jupyter-notebook/
+Source0:	https://github.com/gnu-octave/pkg-jupyter-notebook/archive/v%{version}/%{octpkg}-%{version}.tar.gz
+# (upstream) https://github.com/gnu-octave/pkg-jupyter-notebook/issues/8
+Patch0:		jupyter-notebook-1.2.0-remove_uneeded_deps.patch
 
 Requires:	octave(api) = %{octave_api}
-Requires:	octave-json > 1.5.0
 
 Requires(post): octave
 Requires(postun): octave
 
+BuildArch:	noarch
+
 %description
-Run and fill Jupyter Notebooks within GNU Octave..
+Run and fill Jupyter Notebooks within GNU Octave.
 
 %files
 %license COPYING
@@ -33,11 +33,7 @@ Run and fill Jupyter Notebooks within GNU Octave..
 %prep
 %autosetup -p1 -n pkg-%{octpkg}-%{version}
 
-# remove backup files
-#find . -name \*~ -delete
-
 %build
-%set_build_flags
 %octave_pkg_build
 
 %install
