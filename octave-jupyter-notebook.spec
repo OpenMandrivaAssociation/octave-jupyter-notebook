@@ -12,6 +12,8 @@ Source0:	https://github.com/gnu-octave/pkg-jupyter-notebook/archive/v%{version}/
 # (upstream) https://github.com/gnu-octave/pkg-jupyter-notebook/issues/8
 Patch0:		jupyter-notebook-1.2.0-remove_uneeded_deps.patch
 
+BuildRequires:	octave-devel >= 7.0.0
+
 Requires:	octave(api) = %{octave_api}
 
 Requires(post): octave
