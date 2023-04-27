@@ -1,0 +1,8 @@
+--- a/DESCRIPTION
++++ b/DESCRIPTION
+@@ -9,4 +9,4 @@ description: Run and fill Jupyter Notebo
+  Evaluate long-running Octave Jupyter Notebooks on a computing server
+  without permanent browser connection.
+ categories: package
+-depends: json (>= 1.5.0)
++depends: octave (>= 7.0.0)
