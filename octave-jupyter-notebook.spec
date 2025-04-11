@@ -3,7 +3,7 @@
 Summary:	Run and fill Jupyter Notebooks within GNU Octave
 Name:		octave-jupyter-notebook
 Version:	1.2.0
-Release:	2
+Release:	3
 License:	GPLv3+
 Group:		Sciences/Mathematics
 #Url:		https://packages.octave.org/jupyter-notebook/
