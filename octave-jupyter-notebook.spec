@@ -9,8 +9,6 @@ Group:		Sciences/Mathematics
 #Url:		https://packages.octave.org/jupyter-notebook/
 Url:		https://github.com/gnu-octave/pkg-jupyter-notebook/
 Source0:	https://github.com/gnu-octave/pkg-jupyter-notebook/archive/v%{version}/%{octpkg}-%{version}.tar.gz
-# (upstream) https://github.com/gnu-octave/pkg-jupyter-notebook/issues/8
-Patch0:		jupyter-notebook-1.2.0-remove_uneeded_deps.patch
 
 BuildRequires:	octave-devel >= 7.0.0
 
@@ -20,6 +18,9 @@ Requires(post): octave
 Requires(postun): octave
 
 BuildArch:	noarch
+
+%patchlist
+jupyter-notebook-1.3.0-remove_uneeded_deps.patch
 
 %description
 Run and fill Jupyter Notebooks within GNU Octave.
